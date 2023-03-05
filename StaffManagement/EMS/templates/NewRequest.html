@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load bootstrap5 %}
+
+{% block content %}
+<h1>New Request</h1>
+{% for request in requests %}
+{{ request.title }}
+
+<br>
+{% endfor %}
+{% endblock %}

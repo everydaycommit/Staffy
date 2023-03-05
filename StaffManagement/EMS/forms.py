@@ -1,10 +1,11 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.forms.models import ModelForm
+from .models import Employee,Request,Task,Meeting
 
-class ActivityForm (ModelForm):
+class ActivityForm (forms.ModelForm):
     class Meta():
-        model = Activity
+        model = Task
         fields = [
             'date',
             'time_start',
@@ -12,7 +13,6 @@ class ActivityForm (ModelForm):
             'is_remote',
             'descriptions'
         ]
-
 
 class RegisterForm(ModelForm):
     class Meta():
@@ -23,7 +23,6 @@ class RegisterForm(ModelForm):
             'username',
             'password'
         ]
-
 
 class LoginForm(ModelForm):
     username = forms.CharField(
@@ -49,3 +48,15 @@ class LoginForm(ModelForm):
             'username',
             'password'
         ]
+
+class LeaveRequestForm (ModelForm):
+    model = Request
+    fields = [
+        'employee',
+        'title',
+        'dayoff_from_date',
+        'dayoff_to_date',
+        'is_remote',
+        'description',
+        'created_at'
+    ]

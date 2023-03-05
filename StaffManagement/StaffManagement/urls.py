@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from EMS.views import home,landing_page
+from EMS.views import home,new_request,my_requests,new_activity,my_activities
 
 urlpatterns = [
+    path('',home,name='landing_page'),
+    path('NewActivity/',new_activity,name='new_activity'),
+    path('MyActivities/',my_activities,name='my_activities'),
+    path('NewRequest/',new_request,name='new_request'),
+    path('MyRequests/',my_requests,name='my_requests'),
+    path('register/',my_requests,name='register'),
+    path('login/',my_requests,name='login'),
+    path('logout/',my_requests,name='logout'),
     path('admin/', admin.site.urls),
-    path('',landing_page,name='landing_page')
 ]
