@@ -14,8 +14,8 @@ class Employee (models.Model):
 
 class Task(models.Model):
     status_task = (
-        ('At Site','At Site'),
-        ('Remote', 'Remote')
+        ('At Site','خیر'),
+        ('Remote', 'بله')
     )
 
     title = models.CharField(max_length = 50)
